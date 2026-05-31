@@ -1,0 +1,62 @@
+.page {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: var(--space-8) var(--space-4);
+  animation: pageSlideIn 300ms ease forwards;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 520px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+/* Red-orange accent top border strip */
+.formCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subheading {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.footerLink {
+  margin-top: var(--space-6);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.footerLink a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.footerLink a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

@@ -1,0 +1,189 @@
+.heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Search & Filter Bar ---------- */
+.searchFilterRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-text-tertiary);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: 36px;
+}
+
+.statusPills {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.statusPillBtn {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.statusPillBtn:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.statusPillBtnActive {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.resultsCount {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ---------- Table Layout ---------- */
+.tableWrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-6);
+}
+
+.regTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Sticky headers */
+.regTable th {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface-raised);
+  border-bottom: 2.5px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+}
+
+.regTable td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  vertical-align: middle;
+  transition: background-color var(--transition-fast);
+}
+
+/* Zebra striping */
+.regTable tr:nth-child(even) td {
+  background: var(--color-surface-raised);
+}
+
+.regTable tr:nth-child(odd) td {
+  background: #FFFFFF;
+}
+
+/* Row Hover */
+.regTable tr:hover td {
+  background: var(--color-primary-light) !important;
+}
+
+/* Fonts columns */
+.monoCol {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* ---------- Inline form expand ---------- */
+.inlineApproveRow {
+  background: var(--color-primary-light) !important;
+}
+
+.inlineApproveCell {
+  padding: var(--space-4) !important;
+  border-bottom: 1.5px solid var(--color-primary) !important;
+}
+
+.inlineForm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  animation: expandDown 200ms ease forwards;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.inlineForm input {
+  max-width: 260px;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.pageInfo {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}

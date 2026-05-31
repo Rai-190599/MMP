@@ -1,0 +1,134 @@
+.heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+/* Channel selector */
+.channelRow {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.channelLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 0.9rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.charCount {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: 400;
+  margin-left: 0.4rem;
+}
+
+.charOver {
+  font-size: 0.78rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+/* Preview row */
+.previewRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.previewCount {
+  font-size: 0.9rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* History */
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.tableWrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tableWrapper th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.tableWrapper td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.msgPreview {
+  max-width: 260px;
+  font-size: 0.78rem;
+  color: #6b7280;
+  word-break: break-word;
+}

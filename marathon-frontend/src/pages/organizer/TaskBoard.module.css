@@ -1,0 +1,230 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.filterSelect {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+/* Board layout */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  background: #f9fafb;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.colHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+
+.colTitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+}
+
+.colCount {
+  background: rgba(0,0,0,0.1);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cardList {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 60px;
+}
+
+/* Task card */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.categoryBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cat_sponsors { background: #fef3c7; color: #92400e; }
+.cat_tshirt   { background: #dbeafe; color: #1e40af; }
+.cat_bib      { background: #ede9fe; color: #5b21b6; }
+.cat_volunteers { background: #d1fae5; color: #065f46; }
+.cat_logistics  { background: #fee2e2; color: #991b1b; }
+
+.deleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #9ca3af;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+.deleteBtn:hover { color: #ef4444; }
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.4rem;
+}
+
+.assignee, .deadline {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 0.15rem 0;
+}
+
+/* Checklist */
+.checklist {
+  margin-top: 0.5rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 0.5rem;
+}
+
+.checklistProgress {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0 0 0.35rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #374151;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+}
+
+.checkItem input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Card footer */
+.cardFooter {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.statusBadge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  cursor: pointer;
+  font-weight: 500;
+}
+.statusBadge:hover {
+  background: #4f46e5;
+  color: #fff;
+  border-color: #4f46e5;
+}
+
+/* Add task form */
+.addForm {
+  background: #fff;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.addInput, .addSelect {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+}
+.addBtn:hover {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #9ca3af;
+}

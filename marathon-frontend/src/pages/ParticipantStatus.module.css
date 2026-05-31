@@ -1,0 +1,236 @@
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4);
+  animation: pageSlideIn 300ms ease forwards;
+}
+
+.greetingBox {
+  margin-bottom: var(--space-6);
+}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-1);
+}
+
+.subGreeting {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.stageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.stageLabel {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- BIB Card Styling ---------- */
+.bibCard {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0 0 var(--space-6) 0 !important;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+/* Colored top strip */
+.bibTopStrip {
+  background: var(--color-primary);
+  height: 28px;
+  width: 100%;
+}
+
+.bibInner {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bibEventLabel {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.bibNumber {
+  font-family: var(--font-mono);
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: var(--space-2) 0;
+}
+
+.bibRunnerName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Perforation line */
+.bibPerforation {
+  width: 100%;
+  border-top: 2px dashed var(--color-border-strong);
+  margin: var(--space-4) 0;
+}
+
+/* ---------- Action & Details ---------- */
+.actionCard {
+  margin-bottom: var(--space-6);
+}
+
+.actionMessage {
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.detailsCard {
+  margin-bottom: var(--space-6);
+}
+
+.detailsTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3) var(--space-6);
+  font-size: 0.9375rem;
+}
+
+.dl dt {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding-top: 2px;
+}
+
+.dl dd {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.volunteerCard {
+  margin-bottom: var(--space-6);
+}
+
+.volunteerTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.volunteerSubtext {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* Progress bar for certificate generation */
+.progressContainer {
+  margin: var(--space-4) 0;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  width: 60%;
+  animation: fillProgress 2s ease infinite;
+}
+
+@keyframes fillProgress {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.progressText {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.qrContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--color-border);
+}
+
+.qrImage {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  background: #FFFFFF;
+}
+
+.qrSubtext {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.qrLink {
+  font-size: 0.8125rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.qrLink:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

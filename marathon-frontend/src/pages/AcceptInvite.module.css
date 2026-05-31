@@ -1,0 +1,196 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 56px); /* subtract navbar */
+}
+
+/* ── Left branding panel ── */
+.left {
+  background: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+}
+
+/* Diagonal stripe overlay */
+.left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 18px,
+    rgba(255, 255, 255, 0.04) 18px,
+    rgba(255, 255, 255, 0.04) 36px
+  );
+  pointer-events: none;
+}
+
+.leftInner {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.leftTitle {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.leftSub {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.perkIcon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.perkText {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* ── Right form panel ── */
+.right {
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.formBox {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+}
+
+.formTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.formSub {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorBanner {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.footNote {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* ── States ── */
+.errorState,
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.errorIcon,
+.successIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.errorState h3,
+.successState h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.errorState p,
+.successState p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  max-width: 320px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    padding: 2.5rem 1.5rem;
+    min-height: 280px;
+  }
+
+  .right {
+    padding: 2rem 1.25rem;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,106 @@
+services:
+  # ── Infrastructure ──────────────────────────────────────────────────────────
+
+  postgres:
+    image: postgres:15
+    container_name: marathon_postgres
+    environment:
+      POSTGRES_USER: marathon
+      POSTGRES_PASSWORD: marathon
+      POSTGRES_DB: marathon_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U marathon -d marathon_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  redis:
+    image: redis:7-alpine
+    container_name: marathon_redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  minio:
+    image: minio/minio
+    container_name: marathon_minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password123
+      # Tell MinIO its public URL so presigned URLs validate correctly
+      MINIO_SERVER_URL: "http://localhost:9000"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend ─────────────────────────────────────────────────────────────────
+
+  api:
+    build:
+      context: ./marathon-api
+      dockerfile: Dockerfile
+    container_name: marathon_api
+    env_file:
+      - ./marathon-api/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure
+
+  celery_worker:
+    build:
+      context: ./marathon-api
+      dockerfile: Dockerfile
+    container_name: marathon_celery
+    command: celery -A app.workers.celery_app worker --loglevel=info
+    env_file:
+      - ./marathon-api/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: on-failure
+
+  # ── Frontend ─────────────────────────────────────────────────────────────────
+
+  frontend:
+    build:
+      context: ./marathon-frontend
+      dockerfile: Dockerfile
+      args:
+        # Nginx proxies /auth /events /registrations etc. to the api service,
+        # so the browser only needs to talk to its own origin — leave base URL empty.
+        VITE_API_URL: ""
+        VITE_EVENT_ID: "e2f029a2-de46-4907-81ca-b42f2541a764"
+    container_name: marathon_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: on-failure
+
+volumes:
+  postgres_data:
+  minio_data:

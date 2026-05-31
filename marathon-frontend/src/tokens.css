@@ -1,0 +1,81 @@
+/* marathon-frontend/src/tokens.css */
+
+:root {
+  /* ── Typography ── */
+  --font-display: 'Syne', sans-serif;         /* Headers, hero text, BIB numbers */
+  --font-body: 'DM Sans', sans-serif;          /* Body text, labels, paragraphs */
+  --font-mono: 'DM Mono', monospace;           /* BIB numbers, timestamps, codes */
+
+  /* ── Color palette ── */
+  /* Primary — a deep, athletic orange-red. Energetic but not garish. */
+  --color-primary:       #E8450A;   /* Main CTAs, active states, accent */
+  --color-primary-light: #FDF0EB;   /* Tinted backgrounds, hover fills */
+  --color-primary-dark:  #C23608;   /* Pressed state, darker variant */
+
+  /* Neutrals — warm whites and cool grays. NOT pure #000/#fff. */
+  --color-bg:            #F8F7F4;   /* Page background — warm off-white */
+  --color-surface:       #FFFFFF;   /* Cards, modals, inputs */
+  --color-surface-raised:#FDFCFA;   /* Slightly elevated cards */
+  --color-border:        #E8E6E1;   /* Default borders */
+  --color-border-strong: #D1CEC7;   /* Stronger dividers */
+
+  /* Text */
+  --color-text-primary:  #1A1917;   /* Near-black, warm undertone */
+  --color-text-secondary:#6B6862;   /* Subtext, labels */
+  --color-text-tertiary: #A09D97;   /* Placeholders, disabled */
+  --color-text-inverse:  #FFFFFF;   /* Text on dark/primary backgrounds */
+
+  /* Status colors */
+  --color-success:       #1A7F4B;
+  --color-success-bg:    #EDFAF3;
+  --color-warning:       #A05E00;
+  --color-warning-bg:    #FFF4E0;
+  --color-error:         #C0270D;
+  --color-error-bg:      #FEF0EE;
+  --color-info:          #0B5FAD;
+  --color-info-bg:       #EBF3FD;
+
+  /* Stage/status badge colors */
+  --stage-1: #6B6862;   /* registered — neutral */
+  --stage-2: #0B5FAD;   /* approved — blue */
+  --stage-3: #7B3FA0;   /* confirmed — purple */
+  --stage-4: #A05E00;   /* bib collected — amber */
+  --stage-5: #1A7F4B;   /* certified — green */
+
+  /* ── Spacing scale ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ── Radius ── */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px rgba(26,25,23,0.06), 0 1px 2px rgba(26,25,23,0.04);
+  --shadow-md:  0 4px 12px rgba(26,25,23,0.08), 0 2px 4px rgba(26,25,23,0.04);
+  --shadow-lg:  0 12px 32px rgba(26,25,23,0.10), 0 4px 8px rgba(26,25,23,0.06);
+  --shadow-primary: 0 4px 14px rgba(232,69,10,0.25);
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --sidebar-width: 240px;
+  --navbar-height: 64px;
+}

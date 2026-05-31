@@ -1,0 +1,162 @@
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4);
+  animation: pageSlideIn 300ms ease forwards;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-1);
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+}
+
+.statusCard {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(26, 127, 75, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Roles Grid ---------- */
+.rolesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.roleCard {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.roleCard:hover {
+  border-color: var(--color-text-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.roleCardSelected {
+  border-color: var(--color-primary) !important;
+  background: var(--color-primary-light);
+}
+
+.roleCardDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-bg);
+}
+.roleCardDisabled:hover {
+  border-color: var(--color-border);
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.roleName {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.roleDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.roleSlots {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.slotsOpen {
+  color: var(--color-success);
+}
+
+.slotsFull {
+  color: var(--color-text-tertiary);
+}
+
+.selectBtn {
+  position: absolute;
+  right: var(--space-5);
+  top: var(--space-5);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.selectBtn:hover:not(:disabled) {
+  border-color: var(--color-text-primary);
+  color: var(--color-text-primary);
+}
+
+.selectBtnActive {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* ---------- Links Bottom ---------- */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.links a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.links a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

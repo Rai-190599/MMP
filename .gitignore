@@ -1,0 +1,72 @@
+# ============================================================
+# Python / FastAPI (marathon-api)
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Alembic — keep migrations, ignore local cache
+marathon-api/alembic/__pycache__/
+
+# ============================================================
+# Node / React (marathon-frontend)
+# ============================================================
+node_modules/
+marathon-frontend/dist/
+marathon-frontend/.cache/
+*.local
+
+# ============================================================
+# Environment & secrets — NEVER commit these
+# ============================================================
+.env
+.env.*
+!.env.example
+
+# ============================================================
+# Docker
+# ============================================================
+*.dockerignore
+
+# ============================================================
+# macOS
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# ============================================================
+# IDE / editors
+# ============================================================
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================
+# Misc
+# ============================================================
+*.bak
+*.tmp

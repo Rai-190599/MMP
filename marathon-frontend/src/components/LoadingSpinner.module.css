@@ -1,0 +1,61 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12);
+  width: 100%;
+  animation: fadeIn 300ms ease forwards;
+}
+
+.skeletonBar {
+  width: 100%;
+  max-width: 400px;
+  height: 24px;
+  background: linear-gradient(90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeletonBarShort {
+  width: 60%;
+  max-width: 240px;
+  height: 18px;
+  background: linear-gradient(90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
